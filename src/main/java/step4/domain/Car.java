@@ -17,8 +17,12 @@ public class Car {
         this.position = new Position(position);
     }
 
-    public void move(RandomNumber randomNumber) {
-        this.position = position.move(randomNumber.getRandomNumber());
+//    public void move(RandomNumber randomNumber) {
+//        this.position = position.move(randomNumber.getRandomNumber());
+//    }
+
+    public Car move(RandomNumber randomNumber) {
+        return new Car(name.getName(), position.move(randomNumber.getRandomNumber()).getPosition());
     }
 
     public boolean isSamePosition(int winnerPosition) {

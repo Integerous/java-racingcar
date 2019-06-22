@@ -29,9 +29,7 @@ class PositionTest {
     void 주어진_랜덤숫자가_4이상이면_전진한다() {
         int positionBeforeMove = position.getPosition();
         Position movedPosition = position.move(Position.MOVE_CRITERION);
-
-        assertThat(movedPosition.getPosition())
-                .isEqualTo(positionBeforeMove + Position.DISTANCE_PER_MOVE);
+        assertThat(movedPosition).isEqualTo(positionBeforeMove + Position.DISTANCE_PER_MOVE);
     }
 
     @Test
@@ -48,6 +46,6 @@ class PositionTest {
         int beforeMovePosition = position.getPosition();
         Position movedPosition = position.move(Position.MOVE_CRITERION);
 
-        assertThat(movedPosition.getPosition()).isEqualTo(beforeMovePosition + ONE);
+        assertThat(movedPosition).isEqualTo(beforeMovePosition + ONE);
     }
 }

@@ -2,7 +2,8 @@ package step4.domain;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 public class Cars {
 
@@ -19,14 +20,21 @@ public class Cars {
         return new Cars(carNames.getCarNames()
                 .stream()
                 .map(Car::new)
-                .collect(Collectors.toList()));
+                .collect(toList()));
     }
 
+//    public Cars move() {
+//        for (Car car : cars) {
+//            car.move(RandomNumber.generate());
+//        }
+//        return new Cars(cars);
+//    }
+
     public Cars move() {
-        for (Car car : cars) {
-            car.move(RandomNumber.generate());
-        }
-        return new Cars(cars);
+        return new Cars(
+                cars.stream()
+                        .map(car -> car.move(RandomNumber.generate()))
+                        .collect(toList()));
     }
 
     public int findWinnerPosition() {

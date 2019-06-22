@@ -22,7 +22,8 @@ public class Position {
 
     public Position move(int randomNumber) {
         if (canMove(randomNumber)) {
-            return new Position(position + DISTANCE_PER_MOVE);
+//            return new Position(this.position + DISTANCE_PER_MOVE);
+            return new Position(++position);
         }
         return new Position(position);
     }
