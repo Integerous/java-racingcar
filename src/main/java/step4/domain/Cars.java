@@ -1,5 +1,6 @@
 package step4.domain;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Cars {
         if (cars.isEmpty()) {
             throw new IllegalArgumentException("자동차들이 생성되지 않았습니다.");
         }
-        this.cars = cars;
+        this.cars = new ArrayList<>(cars);
     }
 
     public static Cars of(CarNames carNames) {
